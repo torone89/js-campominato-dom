@@ -43,6 +43,15 @@ header {
 }
 
 #grid .cella.clicked {
-    background-color: lightseagreen;
+
     cursor: not-allowed;
+}
+
+
+.bomb {
+    background-color: red;
+}
+
+.nobomb {
+    background-color: lightseagreen;
 }

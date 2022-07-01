@@ -47,6 +47,9 @@ btn.addEventListener('click', () => {
     const griglia = document.getElementById('grid')
     console.log("Ho recuperato la" + griglia)
 
+    // Recuperto il risulato finale
+    const contatore = document.getElementById("risultato");
+
     griglia.innerHTML = "";
 
 
@@ -84,7 +87,6 @@ btn.addEventListener('click', () => {
         celle.className = 'cella';
         celle.innerText = numero
         // Calcolare le misure delle celle
-
         const side = `calc(100% / ${cellaPerRiga})`
         celle.style.height = side;
         celle.style.width = side;
@@ -97,9 +99,7 @@ btn.addEventListener('click', () => {
     }
 
     // // FUNZIONE
-    // Genero le bombe tramite un ciclo FOR e le inserisco nell'Array Bombs
-    // Genero 17 volte contenuti 
-
+    // Genero 17 bombe tramite un ciclo FOR e le inserisco nell'Array Bombs
     // Creo una funzione che generi i numeri che diventeranno le bombe
     function createBomb(min, max) {
 
@@ -113,10 +113,12 @@ btn.addEventListener('click', () => {
         // Creo il numero della "Bomba"
         bombe.push(createBomb(1, totalecelle))
         console.log(createBomb(1, totalecelle))
-
     }
 
 
+    let risultato = 0
+    // Creo una variabile che tenga conto del punteggio dell'utente
+    contatore.innerText = `Punteggio: ${risultato}`;
 
     for (let i = 1; i <= totalecelle; i++) {
 
@@ -135,48 +137,47 @@ btn.addEventListener('click', () => {
         // n console, poi coloriamo la cella d'azzurro!
 
 
-        //#Milestone 1 # MILESTONE 1
+        //  # MILESTONE 1
         // Prepariamo "qualcosa" per tenere il punteggio dell'utente.
         // Quando l'utente clicca su una cella, incrementiamo il punteggio.
         // Se riusciamo, facciamo anche in modo da non poter più cliccare la stessa cella.
 
 
 
+        cella.addEventListener('click', function (event) {
 
 
-        cella.addEventListener('click', function () {
+            //             # MILESTONE 3
+            // Quando l'utente clicca su una cella, verifichiamo se ha calpestato una bomba,
+            //  controllando se il numero di cella è presente nell'array di bombe. Se si, la cella diventa rossa 
+            // (raccogliamo il punteggio e e scriviamo in console che la partita termina
+            // ) altrimenti diventa azzurra e dobbiamo incrementare il punteggio.
 
+            if (event.target.classList.contains("clicked")) {
+                return;
+            } else {
+                // Aggiungo "Clicked" alla cella
+                event.target.classList.add("clicked");
+                // Stampo il numero della cella cliccata in console
+                console.log("Cell: " + event.target.innerText);
 
-            // cella.classList.add('clicked');
-            // console.log(cella.innerHTML)
-            risultato++
-            console.log(risultato)
+                // Verifico se l'utente ha cliccato una Bomba o meno
+                if (bombe.includes(parseInt(event.target.innerText))) {
+                    event.target.classList.add("bomb");
+                    console.log("BOMBA, Hai perso mi dispiace")
+                } else {
+                    event.target.classList.add("nobomb");
+                    console.log("SALVO,Continua così")
+                    // Aumento di 1 il punteggio utente
+                    risultato++;
+                    contatore.innerText = `Punteggio: ${risultato}`;
+                    console.log("il tuo risultato è" + risultato)
+                }
 
-
-
-            //Per ogni click devo incrementare di uno    
-
-
-
-            // function contatore(risultato) {
-            //     risultato = risultato + 1;
-            //     console.log(risultato)
-            // }
-            // console.log(punteggio)
-
-            // Se è già cliccato non procede
-            // if (cella.classList.contains('clicked')) {
-            //     // risultato++
-
-            //     // console.log(risultato)
-            //     return
-
-            // }
+            }
 
         })
-
     }
-
 })
 
 
