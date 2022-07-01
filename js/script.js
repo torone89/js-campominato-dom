@@ -11,24 +11,15 @@ console.log("JS")
 // # MILESTONE 1
 // Prepariamo l'HTML ed il CSS per ottenere il risultato grafico che vediamo nell'immagine allegata.
 
-
-
 // # BONUS
 // Aggiungere una select accanto al bottone di generazione, che fornisca una scelta tra tre diversi livelli di difficoltà:
 // - con difficoltà 1 => 100 caselle, con un numero compreso tra 1 e 100, divise in 10 caselle per 10 righe;
 // - con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
 // - con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
 
-
-
-
-
 // #MILESTONE 2
 // Rimuoviamo le celle che abbiamo inserito nell'HTML in modo da generarle tramite JS. Al click
 //  del bottone play, vengono generate 100 celle in 10 righe da 10 celle ciascuna.
-
-
-
 
 
 // Recupero il bottone
@@ -95,9 +86,7 @@ btn.addEventListener('click', () => {
         // In ogni cella, deve comparire il numero corrispondente, in ordine da 1 a 100;
 
         return celle;
-
     }
-
     // // FUNZIONE
     // Genero 17 bombe tramite un ciclo FOR e le inserisco nell'Array Bombs
     // Creo una funzione che generi i numeri che diventeranno le bombe
@@ -113,8 +102,8 @@ btn.addEventListener('click', () => {
         // Creo il numero della "Bomba"
         bombe.push(createBomb(1, totalecelle))
         console.log(createBomb(1, totalecelle))
-    }
 
+    }
 
     let risultato = 0
     // Creo una variabile che tenga conto del punteggio dell'utente
@@ -126,23 +115,8 @@ btn.addEventListener('click', () => {
         // Creo cella 
         const cella = creatCell(i)
 
-
         // Appendo la cella alla griglia
         griglia.appendChild(cella)
-
-
-
-
-        // Al click sulla cella, stampiamo il numero della cella cliccata i
-        // n console, poi coloriamo la cella d'azzurro!
-
-
-        //  # MILESTONE 1
-        // Prepariamo "qualcosa" per tenere il punteggio dell'utente.
-        // Quando l'utente clicca su una cella, incrementiamo il punteggio.
-        // Se riusciamo, facciamo anche in modo da non poter più cliccare la stessa cella.
-
-
 
         cella.addEventListener('click', function (event) {
 
@@ -174,6 +148,9 @@ btn.addEventListener('click', () => {
                     console.log("il tuo risultato è" + risultato)
                 }
 
+                if (risultato === totalecelle.length - bombe.length) {
+                    alert('hai vinto')
+                } else if (event.target.classList.contains("bomb")) { alert("Mi dispiace hai perso") }
             }
 
         })
