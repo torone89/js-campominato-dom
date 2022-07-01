@@ -24,34 +24,21 @@ header {
 
 #grid {
 
-    border: solid 1px black;
-    width: 80vh;
-    height: 80vh;
+
+    width: 70vh;
+    height: 70vh;
     flex-wrap: wrap;
     display: flex;
+    margin: 10px 0;
 }
 
 #grid .cella {
-    height: 10%;
-    width: 10%;
     cursor: pointer;
     border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
 
-}
-
-
-
-.cell.cella-medium {
-    width: calc(100% / 9);
-    line-height: calc(600px / 9);
-}
-
-.cell.cella-hard {
-    width: calc(100% / 7);
-    line-height: calc(600px / 7);
 }
 
 #grid .cella.clicked {
