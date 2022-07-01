@@ -8,15 +8,22 @@
 /* *************************/
 
 body {
-    background-color: gray;
+    background-image: url(../img/mine.jpg)
 }
 
 header {
     background-color: white;
-    height: 120px;
+    height: 100px;
     margin-bottom: 40px;
 }
 
+.w-100 {
+    height: 100%;
+}
+
+.wh-50 {
+    height: 50%
+}
 
 /* *************************/
 /* Main */
@@ -34,11 +41,11 @@ header {
 
 #grid .cella {
     cursor: pointer;
-    border: 1px solid black;
+    border: 2px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    background-color: lightgray
 }
 
 #grid .cella.clicked {
@@ -47,10 +54,10 @@ header {
 }
 
 
-.bomb {
+#grid .bomb {
     background-color: red;
 }
 
-.nobomb {
+#grid .nobomb {
     background-color: lightseagreen;
 }

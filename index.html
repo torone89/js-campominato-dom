@@ -41,35 +41,48 @@
     <!-- INTESTAZIONE -->
 
     <header>
-        <div class="container">
-            <div class="row">
-                <div class="col text-center">
+        <div class="container w-100">
 
-                    <h1>Campo Minato Grid</h1>
+
+
+            <div class="row w-100">
+                <div class="col-4 d-flex align-items-center">
+
+                    <h1>Campo Minato</h1>
 
 
                 </div>
-            </div>
 
 
 
 
 
+                <div class="col-4 d-flex align-items-center justify-content-center">
 
-            <div class="row">
-                <div class="col">
-                    <div class='text-center'>
-                        <button id="genera" type="button" class="btn btn-light">Genera</button>
-
+                    <div id="risultato" class="fw-bold">
 
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col text-center">
 
-                        <label for="dificolta" class="fw-bold p-1">Seleziona</label>
 
-                        <select name="dificolta" id="livello">
+
+
+                <div class="col-4">
+
+
+                    <div class=' w-100 d-flex align-items-center justify-content-end'>
+                        <button id="genera" type="button" class="btn btn-primary mr-3">Genera</button>
+
+
+
+
+
+
+
+
+                        <label for="dificolta" class="fw-bold ms-2">Seleziona</label>
+
+                        <select name="dificolta" id="livello" class="ms-1">
                             <option value="easy">Easy</option>
                             <option value="medium">Medium</option>
                             <option value="hard">hard</option>
@@ -79,16 +92,13 @@
 
                     </div>
                 </div>
-
-                <div class="row">
-                    <div class="col text-center">
-
-                        <div id="risultato">
-
-                        </div>
-                    </div>
-                </div>
             </div>
+
+
+
+
+
+        </div>
 
 
     </header>
@@ -310,9 +320,10 @@
                 </div>
             </div>
 
+
+
         </div>
     </main>
-
 
 
     <!-- PIE DI PAGINA -->

@@ -59,7 +59,7 @@ btn.addEventListener('click', () => {
         celle.className = 'cella';
         celle.innerText = numero
         // Calcolare le misure delle celle
-        const side = `calc(100% / ${cellaPerRiga})`
+        const side = `calc(100% / ${cellaPerRiga} - 1px)`
         celle.style.height = side;
         celle.style.width = side;
 
