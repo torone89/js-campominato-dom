@@ -79,18 +79,24 @@ btn.addEventListener('click', () => {
 
     // FUNZIONE
 
-    function creatCell(numero) {
+    function creatCell(numero, cellaPerRiga) {
         const celle = document.createElement('div');
         celle.className = 'cella';
+        celle.innerText = numero
+        // Calcolare le misure delle celle
+
+        const side = `calc(100% / ${cellaPerRiga})`
+        celle.style.height = side;
+        celle.style.width = side;
+
 
         // #MILESTONE 3
         // In ogni cella, deve comparire il numero corrispondente, in ordine da 1 a 100;
 
-        celle.innerText = numero
+
         return celle;
 
     }
-
 
 
     for (let i = 1; i <= totalecelle; i++) {
@@ -103,25 +109,49 @@ btn.addEventListener('click', () => {
         // Appendo la cella alla griglia
         griglia.appendChild(cella)
 
-        console.log(cella)
 
-        // #MILESTONE 4
+
+
         // Al click sulla cella, stampiamo il numero della cella cliccata i
         // n console, poi coloriamo la cella d'azzurro!
 
-        cella.addEventListener('click', function (clicca) {
+
+        //#Milestone 1 # MILESTONE 1
+        // Prepariamo "qualcosa" per tenere il punteggio dell'utente.
+        // Quando l'utente clicca su una cella, incrementiamo il punteggio.
+        // Se riusciamo, facciamo anche in modo da non poter più cliccare la stessa cella.
+
+
+        let risultato = ''
+
+
+        cella.addEventListener('click', function () {
+
 
             cella.classList.add('clicked');
+            console.log(cella.innerHTML)
 
+            // // FUNZIONE
+
+            // Genero un numero da 1 a 16
+            // function getRandomNumber(min, max) {
+            //     let newRandomNumber = Math.floor(Math.random() * max - min + 1) + min;
+            //     return newRandomNumber;
+            // }
+
+
+            //Per ogni click devo incrementare di uno    
+
+            // console.log(punteggio)
 
             // Se è già cliccato non procede
             if (cella.classList.contains('clicked')) {
+                risultato++
+                console.log(risultato)
                 return
+
             }
 
-
-
-            console.log(cella)
         })
 
     }
