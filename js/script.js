@@ -99,15 +99,28 @@ btn.addEventListener('click', () => {
     }
 
     // // FUNZIONE
+    // Genero le bombe tramite un ciclo FOR e le inserisco nell'Array Bombs
+    // Genero 17 volte contenuti 
 
-    // Genero un numero da 1 a 16
-    // function getRandomNumber(min, max) {
-    //     let newRandomNumber = Math.floor(Math.random() * m - min + 1) + min;
-    //     return newRandomNumber;
-    // }
+    // Creo una funzione che generi i numeri che diventeranno le bombe
+    const createBomb = (min, max) => {
+        max++;
+        return Math.floor(Math.random() * (max - min)) + min;
+    };
 
 
-    let risultato = 0;
+    let bombe = "";
+    for (let i = 1; i <= 16; i++) {
+
+        // Creo il numero della "Bomba"
+        let bombe = createBomb(1, totalecelle.lenght);
+        console.log(bombe)
+
+    }
+
+
+
+
 
     for (let i = 1; i <= totalecelle; i++) {
 
