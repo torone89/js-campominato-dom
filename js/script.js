@@ -89,10 +89,8 @@ btn.addEventListener('click', () => {
         celle.style.height = side;
         celle.style.width = side;
 
-
         // #MILESTONE 3
         // In ogni cella, deve comparire il numero corrispondente, in ordine da 1 a 100;
-
 
         return celle;
 
@@ -103,22 +101,20 @@ btn.addEventListener('click', () => {
     // Genero 17 volte contenuti 
 
     // Creo una funzione che generi i numeri che diventeranno le bombe
-    const createBomb = (min, max) => {
-        max++;
+    function createBomb(min, max) {
+
         return Math.floor(Math.random() * (max - min)) + min;
     };
 
 
-    let bombe = "";
+    let bombe = [];
     for (let i = 1; i <= 16; i++) {
 
         // Creo il numero della "Bomba"
-        let bombe = createBomb(1, totalecelle.lenght);
-        console.log(bombe)
+        bombe.push(createBomb(1, totalecelle))
+        console.log(createBomb(1, totalecelle))
 
     }
-
-
 
 
 
