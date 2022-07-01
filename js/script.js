@@ -98,6 +98,16 @@ btn.addEventListener('click', () => {
 
     }
 
+    // // FUNZIONE
+
+    // Genero un numero da 1 a 16
+    // function getRandomNumber(min, max) {
+    //     let newRandomNumber = Math.floor(Math.random() * m - min + 1) + min;
+    //     return newRandomNumber;
+    // }
+
+
+    let risultato = 0;
 
     for (let i = 1; i <= totalecelle; i++) {
 
@@ -122,41 +132,44 @@ btn.addEventListener('click', () => {
         // Se riusciamo, facciamo anche in modo da non poter più cliccare la stessa cella.
 
 
-        let risultato = ''
+
 
 
         cella.addEventListener('click', function () {
 
 
-            cella.classList.add('clicked');
-            console.log(cella.innerHTML)
+            // cella.classList.add('clicked');
+            // console.log(cella.innerHTML)
+            risultato++
+            console.log(risultato)
 
-            // // FUNZIONE
-
-            // Genero un numero da 1 a 16
-            // function getRandomNumber(min, max) {
-            //     let newRandomNumber = Math.floor(Math.random() * max - min + 1) + min;
-            //     return newRandomNumber;
-            // }
 
 
             //Per ogni click devo incrementare di uno    
 
+
+
+            // function contatore(risultato) {
+            //     risultato = risultato + 1;
+            //     console.log(risultato)
+            // }
             // console.log(punteggio)
 
             // Se è già cliccato non procede
-            if (cella.classList.contains('clicked')) {
-                risultato++
-                console.log(risultato)
-                return
+            // if (cella.classList.contains('clicked')) {
+            //     // risultato++
 
-            }
+            //     // console.log(risultato)
+            //     return
+
+            // }
 
         })
 
     }
 
 })
+
 
 
 
