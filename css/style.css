@@ -1,0 +1,48 @@
+/* *************************/
+/* COLOR */
+/* *************************/
+
+
+/* *************************/
+/* GENERIC */
+/* *************************/
+
+body {
+    background-color: gray;
+}
+
+header {
+    background-color: white;
+    height: 120px;
+    margin-bottom: 40px;
+}
+
+
+/* *************************/
+/* Main */
+/* *************************/
+
+#grid {
+
+    border: solid 1px black;
+    width: 600px;
+    height: 600px;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+#grid .cella {
+    height: 10%;
+    width: 10%;
+    cursor: pointer;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#grid .cella.clicked {
+    background-color: lightseagreen;
+    cursor: not-allowed;
+}
