@@ -53,7 +53,7 @@ btn.addEventListener('click', () => {
 
     // FUNZIONE
 
-    // Gebertore Celle
+    // Genearatore Celle
     function creatCell(numero, cellaPerRiga) {
         const celle = document.createElement('div');
         celle.className = 'cella';
@@ -69,6 +69,8 @@ btn.addEventListener('click', () => {
     // Genero 16 bombe tramite un ciclo FOR e le inserisco nell'Array Bombs
     // Creo una funzione che generi i numeri che diventeranno le bombe
     function createBomb(min, max) {
+
+
 
         return Math.floor(Math.random() * (max - min)) + min;
     };
@@ -119,6 +121,9 @@ btn.addEventListener('click', () => {
                 if (bombe.includes(parseInt(event.target.innerText))) {
                     event.target.classList.add("bomb");
                     console.log("BOMBA, Hai perso mi dispiace")
+                    // Il punteggio torna a zero
+                    risultato = 0
+
                 } else {
                     event.target.classList.add("nobomb");
                     console.log("SALVO,Continua così")
@@ -127,7 +132,6 @@ btn.addEventListener('click', () => {
                     contatore.innerText = `Punteggio: ${risultato}`;
                     console.log("il tuo risultato è" + risultato)
                 }
-
                 // Decreto la vittoria se finisco le celle o la Sconfitta se piglio la Bomba
                 if (risultato === totalecelle.length - bombe.length) {
                     alert('hai vinto')
@@ -137,6 +141,8 @@ btn.addEventListener('click', () => {
         })
     }
 })
+
+
 
 
 
